@@ -1,4 +1,18 @@
 /* Mobile layout */
-@@media screen and (max-width: 450px) {
-  
+@media screen and (max-width: 450px) {
+
+}
+
+@media screen and (min-width: 451px) and (max-width: 850px) {
+  /* ====================== Restaurant Filtering ====================== */
+  .filter-options {
+    height: 90px;
+  }
+}
+
+@media screen and (min-width: 850px) {
+  /* ====================== Restaurant Filtering ====================== */
+  .filter-options {
+    height: 90px;
+  }
 }
