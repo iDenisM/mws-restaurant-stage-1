@@ -15,4 +15,9 @@
   .filter-options {
     height: 90px;
   }
+
+  /* ====================== Restaurant Listing ====================== */
+  #restaurants-list li {
+    margin: 15px 15px;
+  }
 }

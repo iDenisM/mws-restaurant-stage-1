@@ -1,9 +1,17 @@
-var gulp = require('gulp');
+let gulp = require('gulp'),
+    uglify = require('gulp-uglify'),
+    pump = require('pump');
 
-gulp.task('default', defaultTask);
+gulp.task('compress', function (cb) {
+  pump([
+      gulp.src('js/*.js'),
+      uglify(),
+      gulp.dest('js/min')
+  ],
+  cb
+  );
+});
 
-function defaultTask(done) {
-  // place code for your default task here
-  console.log('Denis good gulp!');
-  done();
-}
+gulp.task('default', () => {
+  gulp.start('compress');
+});
