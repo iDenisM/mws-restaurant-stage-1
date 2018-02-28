@@ -6,8 +6,7 @@ let gulp = require('gulp'),
     cleanCSS = require('gulp-clean-css'),
     del = require('del'),
     autoprefixer = require('gulp-autoprefixer'),
-    imagemin = require('gulp-imagemin'),
-    imageResize = require('gulp-image-resize');
+    imagemin = require('gulp-imagemin');
 
 let paths = {
   styles: {
@@ -75,7 +74,7 @@ exports.watch = watch;
 /*
  * Specify if tasks run in series or parallel using `gulp.series` and `gulp.parallel`
  */
-var build = gulp.series(clean, move, data, gulp.parallel(styles, scripts));
+let build = gulp.series(clean, move, data, gulp.parallel(styles, scripts));
 
 /*
  * You can still use `gulp.task` to expose tasks
