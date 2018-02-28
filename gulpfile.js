@@ -1,18 +1,21 @@
-var gulp = require('gulp');
-var babel = require('gulp-babel');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var rename = require('gulp-rename');
-var cleanCSS = require('gulp-clean-css');
-var del = require('del');
+let gulp = require('gulp'),
+    babel = require('gulp-babel'),
+    concat = require('gulp-concat'),
+    uglify = require('gulp-uglify'),
+    rename = require('gulp-rename'),
+    cleanCSS = require('gulp-clean-css'),
+    del = require('del'),
+    autoprefixer = require('gulp-autoprefixer'),
+    imagemin = require('gulp-imagemin'),
+    imageResize = require('gulp-image-resize');
 
-var paths = {
+let paths = {
   styles: {
-    src: 'build/css/**/*.css',
+    src: 'dev/css/**/*.css',
     dest: 'dist/css/'
   },
   scripts: {
-    src: 'build/js/**/*.js',
+    src: 'dev/js/**/*.js',
     dest: 'dist/js/'
   }
 };
@@ -27,20 +30,22 @@ function clean() {
   return del([ 'dist' ]);
 }
 
-// Move html files from build to dist
+// Move html files from dev to dist
 function move() {
-  return gulp.src('build/*.html')
+  return gulp.src('dev/*.html')
     .pipe(gulp.dest('dist/'));
+}
+
+function data() {
+  return gulp.src('dev/data/*.json')
+    .pipe(gulp.dest('dist/data/'));
 }
 
 function styles() {
   return gulp.src(paths.styles.src)
     .pipe(cleanCSS())
-    // pass in options to the stream
-    .pipe(rename({
-      basename: 'main',
-      suffix: '.min'
-    }))
+    .pipe(autoprefixer('last 2 versions'))
+    .pipe(concat('main.min.css'))
     .pipe(gulp.dest(paths.styles.dest));
 }
 
@@ -61,6 +66,7 @@ function watch() {
  * You can use CommonJS `exports` module notation to declare tasks
  */
 exports.move = move;
+exports.data = data;
 exports.clean = clean;
 exports.styles = styles;
 exports.scripts = scripts;
@@ -69,7 +75,7 @@ exports.watch = watch;
 /*
  * Specify if tasks run in series or parallel using `gulp.series` and `gulp.parallel`
  */
-var build = gulp.series(clean, move, gulp.parallel(styles, scripts));
+var build = gulp.series(clean, move, data, gulp.parallel(styles, scripts));
 
 /*
  * You can still use `gulp.task` to expose tasks
