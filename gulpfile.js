@@ -44,7 +44,7 @@ function styles() {
   return gulp.src(paths.styles.src)
     .pipe(cleanCSS())
     .pipe(autoprefixer('last 2 versions'))
-    .pipe(concat('main.min.css'))
+    .pipe(concat('main.css'))
     .pipe(gulp.dest(paths.styles.dest));
 }
 
@@ -52,7 +52,7 @@ function scripts() {
   return gulp.src(paths.scripts.src, { sourcemaps: true })
     .pipe(babel({presets: ['es2015']}))
     .pipe(uglify())
-    .pipe(concat('main.min.js'))
+    .pipe(concat('main.js'))
     .pipe(gulp.dest(paths.scripts.dest));
 }
 

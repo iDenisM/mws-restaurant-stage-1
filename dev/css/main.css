@@ -54,7 +54,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 }
 /* ====================== Navigation ====================== */
 header {
-	width: 100%;
+	z-index: 1;
 }
 
 nav {
@@ -65,7 +65,7 @@ nav {
 	position: fixed;
 }
 nav h1 {
-  margin: auto;
+  margin: 15px auto;
 }
 nav h1 a {
   color: #fff;
@@ -75,12 +75,13 @@ nav h1 a {
   text-transform: uppercase;
 }
 #breadcrumb {
-    padding: 10px 40px 16px;
-    list-style: none;
-    background-color: #eee;
-    font-size: 17px;
-    margin: 0;
-    width: calc(50% - 80px);
+  list-style: none;
+  background-color: #eee;
+  font-size: 17px;
+  margin: 55px 0;
+  width: calc(50% - 80px);
+	position: fixed;
+	
 }
 
 /* Display list items side by side */
@@ -206,7 +207,6 @@ nav h1 a {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1000;
 }
 .inside #map-container {
   background: blue none repeat scroll 0 0;
