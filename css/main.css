@@ -58,17 +58,20 @@ header {
         text-transform: uppercase; }
   header #breadcrumb {
     list-style: none;
-    background-color: #eee;
+    background-color: #bbb;
     font-size: 17px;
     margin: 80px 0 0;
-    width: 100%;
-    position: fixed; }
+    width: calc(100% - 40px);
+    position: fixed;
+    padding: 10px 20px; }
     header #breadcrumb li {
       display: inline; }
       header #breadcrumb li + li:before {
         padding: 8px;
         color: black;
         content: "/\00a0"; }
+      header #breadcrumb li li:first-child {
+        padding-left: 40px; }
       header #breadcrumb li a {
         color: #0275d8;
         text-decoration: none; }
@@ -257,6 +260,10 @@ header {
   margin-top: 105px; }
 
 /* Mobile layout */
+@media screen and (max-width: 375px) {
+  header nav h1 {
+    padding-top: 10px; } }
+
 @media screen and (max-width: 730px) {
   /* ====================== Restaurant Listing ====================== */
   #restaurants-list li {

@@ -74,17 +74,21 @@ header {
   }
   #breadcrumb {
     list-style: none;
-    background-color: #eee;
+    background-color: #bbb;
     font-size: 17px;
     margin: 80px 0 0;
-    width: 100%;
+    width: calc(100% - 40px);
     position: fixed;
+    padding: 10px 20px;
     li {
       display: inline;
       + li:before {
         padding: 8px;
         color: black;
         content: "/\00a0";
+      }
+      li:first-child {
+        padding-left: 40px;
       }
       a {
         color: #0275d8;
@@ -309,6 +313,15 @@ header {
 }
 
 /* Mobile layout */
+@media screen and (max-width: 375px) {
+  header {
+    nav {
+      h1 {
+        padding-top: 10px;
+      }
+    }
+  }
+}
 @media screen and (max-width: 450px) {}
 
 @media screen and (max-width: 730px) {
