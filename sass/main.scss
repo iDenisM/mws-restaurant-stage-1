@@ -216,7 +216,7 @@ header {
   #restaurant-container {
     border-bottom: 1px solid #d9d9d9;
     border-top: 1px solid #fff;
-    padding: 15px;
+    padding: 15px 25px;
     width: 100%;
     #restaurant-name {
       color: #f18200;
@@ -257,7 +257,7 @@ header {
     border-top: 1px solid #fff;
     padding: 15px;
     width: 100%;
-    padding: 30px 40px 80px;
+    padding: 30px 25px 80px;
     h2 {
       color: #f58500;
       font-size: 24pt;
@@ -265,21 +265,57 @@ header {
       letter-spacing: -1px;
       padding-bottom: 1pt;
     }
+    /* ====================== Review Card Style ====================== */
     #reviews-list {
       margin: 0;
       padding: 0;
       li {
         background-color: #fff;
-        border: 2px solid #f3f3f3;
-        /* display: block; */
+        border: 2px solid #c3c3c3;
         list-style-type: none;
-        margin: 0 0 30px;
+        margin-bottom: 30px;
         overflow: hidden;
-        padding: 0 20px 20px;
         position: relative;
-        width: 85%;
-        p {
-          margin: 0 0 10px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 25px 0;
+        .reveiw-header {
+          display: inherit;
+          padding: 10px 20px;
+          width: 100%;
+          background-color: #333;
+          p {
+            color: white;
+            width: 50%;
+            font-size: 20px;
+            margin: 0;
+          }
+          p:last-child {
+            font-size: 14px;
+            text-align: right;
+            text-shadow: 0px 3px 1px rgba(0, 0, 0, 1);
+            padding-top: 5px;
+            color: #afafaf;
+          }
+        }
+        .review-content {
+          display: inline-block;
+          padding: 0 20px 20px;
+          width: 100%;
+          p:first-child {
+            width: 30%;
+            text-transform: uppercase;
+            color: #ffffff;
+            background-color: #ffa500;
+            border-radius: 3px;
+            padding: 4px 10px;
+            text-align: center;
+          }
+          p {
+            width: 100%;
+            margin-bottom: 10px;
+          }
         }
       }
     }
@@ -299,15 +335,11 @@ header {
 /* ====================== Inside the Restaurant ====================== */
 .inside {
   #map-container {
-    // background: blue none repeat scroll 0 0;
-    // height: 300px;
-    // width: 100%;
-    // margin-top: 30px;
     #map {
       background-color: #ccc;
       height: 200px;
       width: 100%;
-      margin-top: 105px;
+      margin-top: 125px;
     }
   }
 }

@@ -186,7 +186,7 @@ header {
   #maincontent #restaurant-container {
     border-bottom: 1px solid #d9d9d9;
     border-top: 1px solid #fff;
-    padding: 15px;
+    padding: 15px 25px;
     width: 100%; }
     #maincontent #restaurant-container #restaurant-name {
       color: #f18200;
@@ -220,7 +220,8 @@ header {
     border-top: 1px solid #fff;
     padding: 15px;
     width: 100%;
-    padding: 30px 40px 80px; }
+    padding: 30px 25px 80px;
+    /* ====================== Review Card Style ====================== */ }
     #maincontent #reviews-container h2 {
       color: #f58500;
       font-size: 24pt;
@@ -232,16 +233,49 @@ header {
       padding: 0; }
       #maincontent #reviews-container #reviews-list li {
         background-color: #fff;
-        border: 2px solid #f3f3f3;
-        /* display: block; */
+        border: 2px solid #c3c3c3;
         list-style-type: none;
-        margin: 0 0 30px;
+        margin-bottom: 30px;
         overflow: hidden;
-        padding: 0 20px 20px;
         position: relative;
-        width: 85%; }
-        #maincontent #reviews-container #reviews-list li p {
-          margin: 0 0 10px; }
+        width: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        border-radius: 25px 0; }
+        #maincontent #reviews-container #reviews-list li .reveiw-header {
+          display: inherit;
+          padding: 10px 20px;
+          width: 100%;
+          background-color: #333; }
+          #maincontent #reviews-container #reviews-list li .reveiw-header p {
+            color: white;
+            width: 50%;
+            font-size: 20px;
+            margin: 0; }
+          #maincontent #reviews-container #reviews-list li .reveiw-header p:last-child {
+            font-size: 14px;
+            text-align: right;
+            text-shadow: 0px 3px 1px black;
+            padding-top: 5px;
+            color: #afafaf; }
+        #maincontent #reviews-container #reviews-list li .review-content {
+          display: inline-block;
+          padding: 0 20px 20px;
+          width: 100%; }
+          #maincontent #reviews-container #reviews-list li .review-content p:first-child {
+            width: 30%;
+            text-transform: uppercase;
+            color: #ffffff;
+            background-color: #ffa500;
+            border-radius: 3px;
+            padding: 4px 10px;
+            text-align: center; }
+          #maincontent #reviews-container #reviews-list li .review-content p {
+            width: 100%;
+            margin-bottom: 10px; }
 
 #footer {
   background-color: #444;
@@ -257,7 +291,7 @@ header {
   background-color: #ccc;
   height: 200px;
   width: 100%;
-  margin-top: 105px; }
+  margin-top: 125px; }
 
 /* Mobile layout */
 @media screen and (max-width: 375px) {
