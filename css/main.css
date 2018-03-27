@@ -235,10 +235,10 @@ header {
         background-color: #fff;
         border: 2px solid #c3c3c3;
         list-style-type: none;
-        margin-bottom: 30px;
+        margin: 0 auto 30px;
         overflow: hidden;
         position: relative;
-        width: 100%;
+        width: 300px;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -249,7 +249,8 @@ header {
           display: inherit;
           padding: 10px 20px;
           width: 100%;
-          background-color: #333; }
+          background-color: #333;
+          height: 30px; }
           #maincontent #reviews-container #reviews-list li .reveiw-header p {
             color: white;
             width: 50%;
@@ -303,12 +304,14 @@ header {
   #restaurants-list li {
     margin: 15px auto; } }
 
-@media screen and (min-width: 451px) and (max-width: 850px) {
+@media screen and (min-width: 451px) {
   /* ====================== Restaurant Filtering ====================== */
   .filter-options {
-    height: 90px; } }
-
-@media screen and (min-width: 850px) {
+    height: 90px; }
   /* ====================== Restaurant Filtering ====================== */
-  .filter-options {
-    height: 90px; } }
+  #reviews-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; } }
