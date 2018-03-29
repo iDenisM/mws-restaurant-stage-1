@@ -1,10 +1,10 @@
-let cacheName = 'rest-rev-static-v3',
+let cacheName = 'rest-rev-static-v1',
     cacheFiles = [
-      './',
-      './css/main.css',
-      './js/main.js',
-      './js/restaurant_info.js',
-      './js/dbhelper.js'
+      '/',
+      'css/main.css',
+      'js/main.js',
+      'js/restaurant_info.js',
+      'js/dbhelper.js'
     ]
 
 self.addEventListener('install', (e) => {
