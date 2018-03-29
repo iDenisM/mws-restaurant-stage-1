@@ -23,10 +23,11 @@ self.addEventListener('activate', (e) => {
           return thisCacheName.startsWith('rest-rev-') &&
           thisCacheName != cacheName
         }).map((thisCacheName) => {
-          console.log('[SW] Remove older cache version');
           return cache.delete(thisCacheName)
         })
       )
+    }).catch((err) => {
+      return
     })
   )
 });
