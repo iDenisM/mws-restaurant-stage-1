@@ -58,6 +58,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   const image = document.getElementById('restaurant-img');
   image.className = 'restaurant-img'
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.alt = DBHelper.imageAltForRestaurant(restaurant);
 
   const cuisine = document.getElementById('restaurant-cuisine');
   cuisine.innerHTML = restaurant.cuisine_type;
@@ -70,15 +71,18 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   fillReviewsHTML();
 }
 
+/* TODO: Create navigation for table menu
+*/
 /**
  * Create restaurant operating hours HTML table and add it to the webpage.
  */
 fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => {
   const hours = document.getElementById('restaurant-hours');
   for (let key in operatingHours) {
-    const row = document.createElement('tr');
+    const row = document.createElement('tr'),
+          day = document.createElement('td');
 
-    const day = document.createElement('td');
+    row.tabIndex = 0;
     day.innerHTML = key;
     row.appendChild(day);
 
@@ -97,6 +101,7 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   const container = document.getElementById('reviews-container');
   const title = document.createElement('h2');
   title.innerHTML = 'Reviews';
+  title.tabindex = 0;
   container.appendChild(title);
 
   if (!reviews) {
@@ -119,7 +124,7 @@ createReviewHTML = (review) => {
 
   const li = document.createElement('li'), // Create the li element
         reviewHeader = document.createElement('div'), // Create the header div
-        name = document.createElement('p'),
+        name = document.createElement('h3'),
         date = document.createElement('p');
 
   reviewHeader.className = 'reveiw-header';
